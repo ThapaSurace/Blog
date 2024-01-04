@@ -9,9 +9,14 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@lexical/react": "^0.12.5",
     "@nextui-org/react": "^2.2.9",
+    "@tiptap/pm": "^2.1.13",
+    "@tiptap/react": "^2.1.13",
+    "@tiptap/starter-kit": "^2.1.13",
     "bcryptjs": "^2.4.3",
     "framer-motion": "^10.16.16",
+    "lexical": "^0.12.5",
     "lucide-react": "^0.303.0",
     "mongoose": "^8.0.3",
     "next": "14.0.4",

@@ -9,7 +9,7 @@ const Footer = () => {
         <ul className="flex gap-2 items-center">
             {
                 menuItems.map((item,index)=>(
-                    <li className="font-semibold" key={index}>{item.name}</li>
+                    <li className="text-sm font-extralight tracking-wide" key={index}>{item.name}</li>
                 ))
             }
         </ul>

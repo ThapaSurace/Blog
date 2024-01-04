@@ -6,7 +6,7 @@ import {
   ModalContent,
   Button,
   useDisclosure,
-
+  ModalBody,
 } from "@nextui-org/react";
 
 import LoginForm from "./LoginForm/LoginForm";
@@ -18,18 +18,29 @@ const AuthModal = ({ data }) => {
 
   return (
     <div>
-      <Button onPress={onOpen} variant="light" color="primary">
-        {data === "login" ? "Login" : "Register"}
-      </Button>
+      
+      {
+        data === "login" ? (
+          <Button onPress={onOpen} variant="light" color="primary">
+          Login
+        </Button>
+        ): (
+          <Button onPress={onOpen}  color="primary">
+          Register
+        </Button>
+        )
+      }
       <Modal isOpen={isOpen} onOpenChange={onOpenChange} placement="top-center">
         <ModalContent>
           {(onClose) => (
             <>
-              {mode === "login" ? (
+             <ModalBody>
+             {mode === "login" ? (
                 <LoginForm  setMode={setMode}  />
               ) : (
                 <RegisterForm setMode={setMode} />
               )}
+             </ModalBody>
             </>
           )}
         </ModalContent>

@@ -1,4 +1,4 @@
-"use client";
+
 import {
   Navbar,
   NavbarBrand,
@@ -13,12 +13,12 @@ import {
 import Link from "next/link";
 import DarkThemeToggle from "../DarkTheme/DarkThemeToggle";
 import { menuItems } from "@/constants";
-import { auth } from "@/app/libs/auth";
-import { handleLogout } from "@/app/libs/action";
+import { auth } from "@/libs/auth";
+import { handleLogout } from "@/libs/action";
 import AuthModal from "../AuthModal/AuthModal";
 
-const NavBar = () => {
-  const session = false;
+const NavBar = async () => {
+  const session = await auth();
 
   return (
     <>
@@ -40,7 +40,7 @@ const NavBar = () => {
         <NavbarContent justify="end">
           {session ? (
             <form action={handleLogout}>
-              <Button type="submit">Logout</Button>
+              <Button type="submit" color="primary">Logout</Button>
             </form>
           ) : (
             <>
@@ -52,13 +52,14 @@ const NavBar = () => {
               </NavbarItem>
             </>
           )}
-          <NavbarItem className="hidden md:flex">
+          <NavbarItem className="md:flex">
             <DarkThemeToggle />
           </NavbarItem>
-        </NavbarContent>
-        <NavbarContent className="md:hidden" justify="end">
+          <NavbarItem className="md:hidden">
           <NavbarMenuToggle />
+          </NavbarItem>
         </NavbarContent>
+   
 
         <NavbarMenu>
           {menuItems.map((item, index) => (
