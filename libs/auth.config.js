@@ -41,9 +41,9 @@ export const authConfig = {
               return false;
             }
 
-            if (isOnPostPage && !user) {
-                return false;
-              }
+            // if (isOnPostPage && !user) {
+            //     return false;
+            //   }
 
               if (isOnLoginPage && user) {
                 return Response.redirect(new URL("/", request.nextUrl));

@@ -29,4 +29,32 @@ const userSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
+const postSchema = new mongoose.Schema(
+  {
+    title: {
+      type: String,
+      required: true,
+      unique: true,
+      min: 3,
+      max: 20,
+    },
+    shortDesc:{
+      type: String,
+      required: true,
+    },
+    longDesc: {
+      type: String,
+      required: true,
+    },
+    img: {
+      type: String,
+    },
+    userId:{
+      type: String,
+    }
+  },
+  { timestamps: true }
+);
+
 export const User = mongoose.models?.User || mongoose.model("User", userSchema);
+export const Post = mongoose.models?.Post || mongoose.model("Post", postSchema);

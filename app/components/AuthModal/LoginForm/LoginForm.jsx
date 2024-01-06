@@ -1,9 +1,7 @@
+'use client'
 import React from "react";
 
 import {
-  ModalHeader,
-  ModalBody,
-  ModalFooter,
   Button,
   Input,
   Divider,
