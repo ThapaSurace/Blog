@@ -2,10 +2,7 @@
 import BlogList from "../components/Bloglist/BlogList"
 import SideMenu from "../components/SideMenu/SideMenu"
 
-
-
 const Page = () => {
-
   return (
    <div className="max-w-6xl mx-auto my-10 px-6">
     <div className="bg-[#f0abfc] py-4 rounded-md text-center text-white font-bold mb-6">Category</div>
