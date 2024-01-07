@@ -1,27 +1,13 @@
+import { BASE_URL } from "@/libs/BaseUrl";
 
-import { useQuery } from "@tanstack/react-query";
-import newRequest from "@/libs/newRequest";
+  export const getData = async () => {
+    const res = await fetch(`${BASE_URL}/post`,{cache:"no-store"});
+    return res.json();
+  };
 
-//get all posts
-export function usePostQuery() {
-    return useQuery({
-      queryKey: ["posts"],
-      queryFn: async () =>
-       await newRequest.get(`/post`).then((res) => {
-          return res.data;
-        }),
-    });
+  export const getSinglePost = async (id) => {
+    const res =  await fetch(`${BASE_URL}/post/${id}`)
+    return res.json()
   }
   
-
-//get single post
-export function useSinglePostQuery(id) {
-    return useQuery({
-      queryKey: ["singlepost"],
-      queryFn: async () =>
-       await newRequest.get(`/post/${id}`).then((res) => {
-          return res.data;
-        }),
-    });
-  }
   

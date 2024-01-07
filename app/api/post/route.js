@@ -1,6 +1,7 @@
 import { Post } from "@/libs/model";
 import { connectToDb } from "@/libs/dbConfig";
 import { NextResponse } from "next/server";
+import { revalidatePath } from "next/cache";
 
 export const POST = async (request) => {
   const payload = await request.json()
@@ -8,6 +9,8 @@ export const POST = async (request) => {
   try {
     const newPost = new Post(payload);
     const post = await newPost.save();
+    revalidatePath("/")
+    revalidatePath("/blog")
     return NextResponse.json(post)
   } catch (err) {
     console.log(err);

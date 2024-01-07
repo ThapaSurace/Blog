@@ -1,10 +1,13 @@
 import axios from 'axios'
 import React from 'react'
+import { BASE_URL } from '@/libs/BaseUrl'
 
 const getPosts = async () => {
-   const {data} =  await axios.get("http://localhost:3000/api/post")
+   const {data} =  await axios.get(`${BASE_URL}/post`)
    return data
 }
+
+
 
 const TestPage = async () => {
     const posts = await getPosts()
@@ -15,7 +18,7 @@ const TestPage = async () => {
             posts.map(post=>(
                 <div>
                    <h1> {post.title}</h1>
-                   <div dangerouslySetInnerHTML={{ __html: `${post.desc}` }} />
+                   <div dangerouslySetInnerHTML={{ __html: `${post.longDesc}` }} />
                 </div>
             ))
         }

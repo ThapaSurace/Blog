@@ -3,12 +3,7 @@ import ThemeProvider from "./ThemeProvider";
 import NavBar from "./components/Navbar/NavBar";
 import { Roboto, Dancing_Script, Playfair_Display } from "next/font/google";
 import Footer from "./components/Footer/Footer";
-import OueryProvider from "./OueryProvider";
 
-const roboto = Roboto({
-  weight: ["100", "300", "400", "500", "700", "900"],
-  subsets: ["latin"],
-});
 
 const playfair = Playfair_Display({
   weight: ["400", "500", "600", "700", "800", "900"],
@@ -30,13 +25,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${dancing.variable}`}>
       <body className={playfair.className}>
-        <OueryProvider>
+  
           <ThemeProvider>
             <NavBar />
             <main>{children}</main>
             <Footer />
           </ThemeProvider>
-        </OueryProvider>
+     
       </body>
     </html>
   );

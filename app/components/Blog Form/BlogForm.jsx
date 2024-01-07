@@ -19,8 +19,6 @@ export default function BlogForm({session}) {
   
     const editorRef = useRef(null);
 
-    console.log(session)
-  
     function handleChange(e) {
       setFile(URL.createObjectURL(e.target.files[0]));
       setImage(e.target.files[0])
@@ -43,16 +41,21 @@ export default function BlogForm({session}) {
         img:uploadedImage,
         category
       };
-      console.log(data);
       try {
-        await axios
-          .post("http://localhost:3000/api/post", data)
-          .then(function (response) {
-            console.log(response);
-          })
-          .catch(function (error) {
-            console.log(error);
-          });
+        const response = await axios.post("http://localhost:3000/api/post", data);
+          if (response.status === 200) {
+            // Clear the state
+            setTitle("");
+            setShortDesc("");
+            setCategory("");
+            setFile(undefined);
+            setImage(undefined);
+            setUploadedImage("");
+            // You might also want to clear the content in the editor if needed
+            if (editorRef.current) {
+              editorRef.current.setContent("");
+            }
+          }
       } catch (error) {
         console.log(error);
       }

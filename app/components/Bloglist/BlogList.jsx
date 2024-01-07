@@ -1,23 +1,18 @@
-"use client"
-import { usePostQuery } from "@/app/utils/fetchApi"
-import BlogCard from "../BlogCard/BlogCard"
-import Pazination from "../pagination/Pazination"
+import BlogCard from "../BlogCard/BlogCard";
+import Pazination from "../pagination/Pazination";
+import { getData } from "@/app/utils/fetchApi";
 
-const BlogList = () => {
-  const {data,isLoading,error} = usePostQuery()
+
+const BlogList = async () => {
+  const data = await getData();
+ console.log(data)
   return (
     <div className="flex flex-col gap-8">
-          {
-            isLoading ? "loading...."
-            :error ? "Something went wrong!!"
-            :(
-              data.map(item=>(
-                <BlogCard key={item._id} post={item} />
-              ))
-            )
-          }
-          </div>
-  )
-}
+      {data.map((item) => (
+        <BlogCard key={item._id} post={item} />
+      ))}
+    </div>
+  );
+};
 
-export default BlogList
+export default BlogList;
