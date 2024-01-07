@@ -8,7 +8,6 @@ import {
   NavbarMenu,
   NavbarItem,
   Button,
-  useDisclosure,
 } from "@nextui-org/react";
 import Link from "next/link";
 import DarkThemeToggle from "../DarkTheme/DarkThemeToggle";

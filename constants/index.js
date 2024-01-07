@@ -45,27 +45,19 @@ export const categories = [
     }
 ]
 
-export const animals = [
-  {label: "Cat", value: "cat"},
-  {label: "Dog", value: "dog"},
-  {label: "Elephant", value: "elephant"},
-  {label: "Lion", value: "lion"},
-  {label: "Tiger", value: "tiger"},
-  {label: "Giraffe", value: "giraffe"},
-  {
-    label: "Dolphin",
-    value: "dolphin"
-  },
-  {label: "Penguin", value: "penguin"},
-  {label: "Zebra", value: "zebra"},
-  {
-    label: "Shark",
-    value: "shark"
-  },
-  {
-    label: "Whale",
-    value: "whale"
-  },
-  {label: "Otter", value: "otter"},
-  {label: "Crocodile", value: "crocodile"},
+export const blogCategories = [
+  { label: "Technology", value: "technology" },
+  { label: "Travel", value: "travel" },
+  { label: "Food", value: "food" },
+  { label: "Fashion", value: "fashion" },
+  { label: "Health", value: "health" },
+  { label: "Science", value: "science" },
+  { label: "Business", value: "business" },
+  { label: "Lifestyle", value: "lifestyle" },
+  { label: "Entertainment", value: "entertainment" },
+  { label: "Sports", value: "sports" },
+  { label: "Education", value: "education" },
+  { label: "Art and Design", value: "art_and_design" },
+  { label: "Personal Development", value: "personal_development" },
+  { label: "Environment", value: "environment" },
 ];
