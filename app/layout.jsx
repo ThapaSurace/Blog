@@ -4,7 +4,6 @@ import NavBar from "./components/Navbar/NavBar";
 import { Roboto, Dancing_Script, Playfair_Display } from "next/font/google";
 import Footer from "./components/Footer/Footer";
 
-
 const playfair = Playfair_Display({
   weight: ["400", "500", "600", "700", "800", "900"],
   subsets: ["latin"],
@@ -25,13 +24,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${dancing.variable}`}>
       <body className={playfair.className}>
-  
-          <ThemeProvider>
-            <NavBar />
-            <main>{children}</main>
-            <Footer />
-          </ThemeProvider>
-     
+        <ThemeProvider>
+          <NavBar />
+          <main>{children}</main>
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );
