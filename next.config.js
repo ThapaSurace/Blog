@@ -12,4 +12,7 @@ module.exports = {
         },
       ],
     },
+    env: {
+      BASE_URL: 'https://blog-five-indol-85.vercel.app/',
+    },
   }
