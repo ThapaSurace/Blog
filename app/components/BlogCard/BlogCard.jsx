@@ -10,7 +10,7 @@ const BlogCard = ({post}) => {
       </div>
       <div className="md:flex-[3]">
       <div className="mt-4">
-        <span className="text-gray-400 text-sm font-light">01/01/2024</span> .<span className="text-pink-600 ml-1">Category</span>
+        <span className="text-gray-400 text-sm font-light">01/01/2024</span> .<span className="text-pink-600 ml-1 capitalize">{post.category}</span>
       </div>
       <h1 className="mt-3 text-xl font-bold">
         {post.title}

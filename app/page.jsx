@@ -2,6 +2,7 @@ import { categories } from "@/constants";
 import Hero from "./components/Hero/Hero";
 import BlogList from "./components/Bloglist/BlogList";
 import SideMenu from "./components/SideMenu/SideMenu";
+import { Divider } from "@nextui-org/react";
 
 
 const Page = () => {
@@ -27,6 +28,7 @@ const Page = () => {
           <h1 className="text-3xl font-bold mb-4">Recent Posts</h1>
           <BlogList />
         </div>
+        <Divider className="mt-6 lg:hidden" />
         <div className="lg:basis-1/3 mt-10 lg:mt-0">
          <SideMenu />
         </div>
