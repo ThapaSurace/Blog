@@ -10,7 +10,7 @@ import { BASE_URL } from "@/libs/BaseUrl";
   };
 
   export const getSinglePost = async (id) => {
-    const res =  await fetch("http://localhost:3000/api/post/${id}")
+    const res =  await fetch(`http://localhost:3000/api/post/${id}`)
     if (!res.ok) {
       // This will activate the closest `error.js` Error Boundary
       throw new Error('Failed to fetch data')
