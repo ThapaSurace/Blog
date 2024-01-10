@@ -7,7 +7,7 @@ import axios from "axios";
 import Image from "next/image";
 import upload from "@/libs/upload";
 import { blogCategories } from "@/constants";
-
+import toast from "react-hot-toast";
 
 export default function BlogForm({session}) {
     const [title, setTitle] = useState("");
@@ -31,6 +31,11 @@ export default function BlogForm({session}) {
   
   
     const log = async () => {
+      if (!title || !shortDesc || !category || !uploadedImage || !editorRef.current || !editorRef.current.getContent()) {
+        // Check if any of the required fields is empty
+        toast.error('Please fill all the field of the form!')
+        return;
+      }
       if (editorRef.current) {
         const longDesc = editorRef.current.getContent();
   
@@ -44,6 +49,7 @@ export default function BlogForm({session}) {
       try {
         const response = await axios.post("http://localhost:3000/api/post", data);
           if (response.status === 200) {
+            toast.success("Blog posted successfully")
             // Clear the state
             setTitle("");
             setShortDesc("");

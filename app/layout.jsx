@@ -1,7 +1,8 @@
 import "./globals.css";
 import ThemeProvider from "./ThemeProvider";
 import NavBar from "./components/Navbar/NavBar";
-import { Roboto, Dancing_Script, Playfair_Display } from "next/font/google";
+import { Dancing_Script, Playfair_Display } from "next/font/google";
+import { Toaster } from "react-hot-toast";
 import Footer from "./components/Footer/Footer";
 
 const playfair = Playfair_Display({
@@ -25,6 +26,7 @@ export default function RootLayout({ children }) {
     <html lang="en" className={`${dancing.variable}`}>
       <body className={playfair.className}>
         <ThemeProvider>
+          <Toaster position="bottom-right" />
           <NavBar />
           <main>{children}</main>
           <Footer />
