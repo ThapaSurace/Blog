@@ -1,10 +1,8 @@
 import BlogCard from "../BlogCard/BlogCard";
-import Pazination from "../pagination/Pazination";
 import { getData } from "@/app/utils/fetchApi";
 
-
-const BlogList = async () => {
-  const data = await getData();
+const BlogList = async ({cat}) => {
+  const data = await getData(cat);
 
   return (
     <div className="flex flex-col gap-8">

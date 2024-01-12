@@ -17,10 +17,20 @@ export const POST = async (request) => {
   }
 };
 
-export const GET = async () => {
+export const GET = async (req) => {
   await connectToDb()
+  const { searchParams } = new URL(req.url)
+  const cat = searchParams.get("category");
   try {
-    const posts = await Post.find()
+    let posts;
+
+    if (cat) {
+      // Fetch posts based on the provided category
+      posts = await Post.find({ category: cat });
+    } else {
+      // Fetch all posts
+      posts = await Post.find();
+    }
     return NextResponse.json(posts)
   } catch (error) {
     console.log(err);

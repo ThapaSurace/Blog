@@ -19,27 +19,27 @@ export const menuItems = [
 
 export const categories = [
   {
-    name: "Anime",
+    name: "anime",
     color: "#faa0bf",
   },
   {
-    name: "Coding",
+    name: "coding",
     color: "#fbdba7",
   },
   {
-    name: "Style",
+    name: "style",
     color: "#a2e9c1",
   },
   {
-    name: "Fashion",
+    name: "fashion",
     color: "#c9a9e9",
   },
   {
-    name: "Food",
+    name: "food",
     color: "#99c7fb",
   },
   {
-    name: "Travel",
+    name: "travel",
     color: "#d4d4d8",
   },
 ];

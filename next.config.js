@@ -10,6 +10,10 @@ module.exports = {
           protocol: 'http',
           hostname: 'res.cloudinary.com',
         },
+        {
+          protocol: 'https',
+          hostname: 'avatars.githubusercontent.com',
+        },
       ],
     },
   }

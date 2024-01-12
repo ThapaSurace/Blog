@@ -1,4 +1,3 @@
-
 import {
   Navbar,
   NavbarBrand,
@@ -15,6 +14,7 @@ import { menuItems } from "@/constants";
 import { auth } from "@/libs/auth";
 import { handleLogout } from "@/libs/action";
 import AuthModal from "../AuthModal/AuthModal";
+import UserMenu from "../UserDropDownMenu/UserMenu";
 
 const NavBar = async () => {
   const session = await auth();
@@ -38,9 +38,9 @@ const NavBar = async () => {
 
         <NavbarContent justify="end">
           {session ? (
-            <form action={handleLogout}>
-              <Button type="submit" color="primary">Logout</Button>
-            </form>
+            <NavbarItem>
+              <UserMenu session={session} />
+            </NavbarItem>
           ) : (
             <>
               <NavbarItem className="hidden md:flex">
@@ -55,10 +55,9 @@ const NavBar = async () => {
             <DarkThemeToggle />
           </NavbarItem>
           <NavbarItem className="md:hidden">
-          <NavbarMenuToggle />
+            <NavbarMenuToggle />
           </NavbarItem>
         </NavbarContent>
-   
 
         <NavbarMenu>
           {menuItems.map((item, index) => (
