@@ -34,6 +34,6 @@ export const GET = async (req) => {
     return NextResponse.json(posts)
   } catch (error) {
     console.log(err);
-    return new Error("Fail to post!");
+    return new Error("Fail to get post!");
   }
 }

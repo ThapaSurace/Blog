@@ -20,4 +20,12 @@
     return res.json()
   }
   
-  
+  export const getAllUsersData = async (cat) => {
+    const res = await fetch(`${process.env.BASE_URL}/api/user`,{cache:"no-store"});
+    if (!res.ok) {
+      // This will activate the closest `error.js` Error Boundary
+      throw new Error('Failed to fetch data')
+    }
+    return res.json();
+  };
+

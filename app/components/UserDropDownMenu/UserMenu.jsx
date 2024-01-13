@@ -38,8 +38,8 @@ const UserMenu = ({ session }) => {
           <div className="py-1">
             <Menu.Item>
               <Link
-                href="#"
-                className="text-gray-700 block px-4 py-2 font-semibold text-sm hover:bg-gray-400/50 rounded-md"
+                href="/bloglists"
+                className="text-gray-700 block px-4 py-2 font-semibold text-sm hover:bg-gray-400/50 rounded-md text-center"
               >
                 My Blogs
               </Link>
@@ -47,7 +47,7 @@ const UserMenu = ({ session }) => {
             <Menu.Item>
               <form action={handleLogout}>
                 <button
-                  className="text-gray-700 block px-4 py-2 font-semibold text-sm hover:bg-gray-400/50 rounded-md w-full text-start"
+                  className="text-gray-700 block px-4 py-2 font-semibold text-sm hover:bg-gray-400/50 rounded-md w-full text-center"
                   type="submit"
                 >
                   logout

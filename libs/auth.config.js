@@ -17,6 +17,7 @@ export const authConfig = {
             if (token) {
               session.user.id = token.id;
               session.user.isAdmin = token.isAdmin;
+              console.log(token)
             }
             return session;
           },
@@ -30,10 +31,10 @@ export const authConfig = {
           
             // ONLY ADMIN CAN REACH THE ADMIN DASHBOARD
       
-            if (isOnAdminPanel && !user?.isAdmin) {
+            // if (isOnAdminPanel && !user?.isAdmin) {
                 
-              return false;
-            }
+            //   return false;
+            // }
       
             // ONLY AUTHENTICATED USERS CAN REACH THE BLOG PAGE
       
