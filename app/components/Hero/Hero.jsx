@@ -17,9 +17,9 @@ const Hero = async () => {
           className="rounded-md object-cover object-center"
         />
       </div>
-      <div className="md:flex-1 md:flex md:justify-center md:items-center">
+      <div className="md:flex-1 md:flex md:justify-center md:items-center prose dark:prose-invert">
        <div>
-       <h1 className="text-2xl font-bold">
+       <h1>
           {data.title}
         </h1>
         <p className="my-4">

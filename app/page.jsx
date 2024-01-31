@@ -25,15 +25,17 @@ const Page = () => {
           ))}
         </ul>
       </div>
-      <div className="lg:flex gap-20">
-        <div className="lg:basis-4/6">
+      <div className="">
+       
           <h1 className="text-3xl font-bold mb-4">Recent Posts</h1>
-          <BlogList />
-        </div>
-        <Divider className="mt-6 lg:hidden" />
+       
+         <BlogList />
+       
+       
+        {/* <Divider className="mt-6 lg:hidden" />
         <div className="lg:basis-1/3 mt-10 lg:mt-0">
          <SideMenu />
-        </div>
+        </div> */}
       </div>
     </div>
   );

@@ -5,7 +5,7 @@ const BlogList = async ({cat}) => {
   const data = await getData(cat);
 
   return (
-    <div className="flex flex-col gap-8">
+    <div className="grid grid-cols-3 gap-8">
       {data.map((item) => (
         <BlogCard key={item._id} post={item} />
       ))}
