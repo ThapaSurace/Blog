@@ -1,34 +1,23 @@
-import { getSinglePost } from "@/app/utils/fetchApi";
 import { Button } from "@nextui-org/react";
 import Image from "next/image";
 import Link from "next/link";
 
-const Hero = async () => {
-  const id = "659a96829352ce0aee775b9d"
-  const data = await getSinglePost(id)
-  
+const Hero = () => {
   return (
-    <div className="md:flex md:gap-4">
-           <div className="relative h-[250px] md:h-[400px] mb-4 md:flex-1">
-        <Image
-          fill
-          src={data.img}
-          alt="header image"
-          className="rounded-md object-cover object-center"
-        />
-      </div>
-      <div className="md:flex-1 md:flex md:justify-center md:items-center prose dark:prose-invert">
-       <div>
-       <h1>
-          {data.title}
-        </h1>
-        <p className="my-4">
-          {data.shortDesc}
-        </p>
-       <Link href={`/blog/${data._id}`}>
-       <Button color="primary">Read More</Button>
-       </Link>
-       </div>
+    <div className="min-h-[50vh] flex justify-center items-center">
+      <div className="md:flex md:flex-row justify-between items-center w-full">
+        <div className="mb-10 prose-sm sm:prose prose lg:prose-lg dark:prose-invert flex-1 max-w">
+          <h1>Mindful Musings: Navigating Life's Journey</h1>
+          <p className="max-w-md">
+            Explore the depths of your thoughts and embark on a journey of
+            self-discovery through mindful musings.
+          </p>
+        </div>
+        <div className="flex-1 h-[300px] relative">
+ 
+            <Image fill src="/hero.svg" alt="hero image" className="h-[400px] object-center object-cover" />
+    
+        </div>
       </div>
     </div>
   );
