@@ -60,5 +60,20 @@ const postSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
+const commentSchema = new mongoose.Schema(
+  {
+    desc: {
+      type: String,
+      required: true,
+    },
+    userId: {
+      type: String,
+      required: true
+    }
+  },
+  { timestamps: true }
+);
+
 export const User = mongoose.models?.User || mongoose.model("User", userSchema);
 export const Post = mongoose.models?.Post || mongoose.model("Post", postSchema);
+export const Comment = mongoose.models?.Comment || mongoose.model("Comment", commentSchema);

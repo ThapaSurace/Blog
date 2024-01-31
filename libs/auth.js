@@ -19,7 +19,6 @@ const login = async (credentials) => {
     );
 
     if (!isPasswordCorrect) throw new Error("Wrong credentials!");
-
     return user;
   } catch (err) {
     console.log(err);
@@ -43,7 +42,6 @@ export const {
       async authorize(credentials) {
         try {
           const user = await login(credentials);
-          console.log(user)
           return user;
         } catch (err) {
           return null;
@@ -60,13 +58,13 @@ export const {
 
           if (!user) {
             const newUser = new User({
-              // _id: user._id,
               username: profile.login,
               email: profile.email,
               image: profile.avatar_url,
             });
 
             await newUser.save();
+            return true
           }
         } catch (err) {
           console.log(err);

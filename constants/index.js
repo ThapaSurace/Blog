@@ -27,7 +27,7 @@ export const categories = [
     color: "#fbdba7",
   },
   {
-    name: "style",
+    name: "technology",
     color: "#a2e9c1",
   },
   {

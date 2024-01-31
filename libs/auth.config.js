@@ -1,5 +1,3 @@
-
-
 export const authConfig = {
     pages: {
         signIn: "/login",
@@ -8,16 +6,15 @@ export const authConfig = {
     callbacks:{
         async jwt({ token, user }) {
             if (user) {
-              token.id = user.id;
+              token._id = user._id;
               token.isAdmin = user.isAdmin;
             }
             return token;
           },
           async session({ session, token }) {
             if (token) {
-              session.user.id = token.id;
+              session.user.id = token._id;
               session.user.isAdmin = token.isAdmin;
-              console.log(token)
             }
             return session;
           },

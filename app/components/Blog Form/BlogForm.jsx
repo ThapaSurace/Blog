@@ -31,7 +31,7 @@ export default function BlogForm({session}) {
   
   
     const log = async () => {
-      if (!title || !shortDesc || !category || !uploadedImage || !editorRef.current || !editorRef.current.getContent()) {
+      if (!title || !shortDesc || !category  || !editorRef.current || !editorRef.current.getContent()) {
         // Check if any of the required fields is empty
         toast.error('Please fill all the field of the form!')
         return;
