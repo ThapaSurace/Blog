@@ -3,11 +3,3 @@
 @tailwind utilities;
 
 
-h1,h2,h3,h4{
-   @apply font-bold text-xl md:text-2xl lg:text-3xl mb-4
-}
-
-p{
-   @apply text-base md:text-lg tracking-wide mb-3 leading-relaxed
-}
-
