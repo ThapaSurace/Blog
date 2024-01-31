@@ -12,19 +12,19 @@ import Link from "next/link";
 import DarkThemeToggle from "../DarkTheme/DarkThemeToggle";
 import { menuItems } from "@/constants";
 import { auth } from "@/libs/auth";
-import { handleLogout } from "@/libs/action";
 import AuthModal from "../AuthModal/AuthModal";
 import UserMenu from "../UserDropDownMenu/UserMenu";
 
 const NavBar = async () => {
   const session = await auth();
-
   return (
     <>
       <Navbar disableAnimation isBordered maxWidth="xl">
         <NavbarContent justify="start">
           <NavbarBrand>
-            <p className="font-dancing text-3xl">ZoroBlog</p>
+            <Link href="/">
+            <p className="font-dancing text-3xl cursor-pointer">ZoroBlog</p>
+            </Link>
           </NavbarBrand>
         </NavbarContent>
 
