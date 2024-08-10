@@ -35,9 +35,9 @@ export const authConfig = {
       
             // ONLY AUTHENTICATED USERS CAN REACH THE BLOG PAGE
       
-            if (isOnBlogPage && !user) {
-              return false;
-            }
+            // if (isOnBlogPage && !user) {
+            //   return false;
+            // }
 
             if (isOnPostPage && !user) {
                 return false;
