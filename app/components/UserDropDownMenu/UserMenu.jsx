@@ -5,10 +5,6 @@ import { handleLogout } from "@/libs/action";
 import Link from "next/link";
 import Image from "next/image";
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
-
 const UserMenu = ({ session }) => {
   console.log(session);
   return (
